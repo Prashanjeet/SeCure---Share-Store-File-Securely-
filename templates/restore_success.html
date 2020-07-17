@@ -1,0 +1,58 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Download File
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Secorps</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="main">
+          <div class="row placeholders">
+            <h1> Secure File Storage Using Hybrid Cryptography </h1><br><br>
+          </div>
+					<center>
+						<b><p style="color:green; font-size:50px">SUCCESS</p></b>
+						<table>
+							<tr>
+								<td><a href='return-file' target="blank"><button class = "btn btn-success">Download File</button></a></td>
+								<td><a href='home'><button class = "btn btn-primary">Back to HOME</button ></a></td>
+							</tr>
+						</table>
+					</center>
+					<div class="table-responsive">
+            <table class="table table-striped">
+              <center>
+                <h3>Your file has been securely decrypted!!</h3>
+                <p>Click on "Download File to downlaod your file <b>:)</b></p>
+              </center>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
